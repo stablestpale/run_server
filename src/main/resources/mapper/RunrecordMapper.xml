@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.su_root.run_server.dao.mapper.RunRecordMapper">
+  <resultMap id="BaseResultMap" type="top.su_root.run_server.entity.RunRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="account" jdbcType="CHAR" property="account" />
+    <result column="distance" jdbcType="DOUBLE" property="distance" />
+    <result column="duration" jdbcType="VARCHAR" property="duration" />
+    <result column="startPoint" jdbcType="VARCHAR" property="startpoint" />
+    <result column="endPoint" jdbcType="VARCHAR" property="endpoint" />
+    <result column="m_start_time" jdbcType="VARCHAR" property="mStartTime" />
+    <result column="m_end_time" jdbcType="VARCHAR" property="mEndTime" />
+    <result column="calorie" jdbcType="DOUBLE" property="calorie" />
+    <result column="speed" jdbcType="DOUBLE" property="speed" />
+    <result column="distribution" jdbcType="DOUBLE" property="distribution" />
+    <result column="date_tag" jdbcType="VARCHAR" property="dateTag" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="top.su_root.run_server.entity.RunRecord">
+    <result column="pathLine" jdbcType="LONGVARCHAR" property="pathline" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, account, distance, duration, startPoint, endPoint, m_start_time, m_end_time, 
+    calorie, speed, distribution, date_tag
+  </sql>
+  <sql id="Blob_Column_List">
+    pathLine
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="top.su_root.run_server.entity.RunRecordExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from run_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="top.su_root.run_server.entity.RunRecordExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from run_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from run_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from run_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="top.su_root.run_server.entity.RunRecordExample">
+    delete from run_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="top.su_root.run_server.entity.RunRecord">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into run_record (account, distance, duration, 
+      startPoint, endPoint, m_start_time, 
+      m_end_time, calorie, speed, 
+      distribution, date_tag, pathLine
+      )
+    values (#{account,jdbcType=CHAR}, #{distance,jdbcType=DOUBLE}, #{duration,jdbcType=VARCHAR}, 
+      #{startpoint,jdbcType=VARCHAR}, #{endpoint,jdbcType=VARCHAR}, #{mStartTime,jdbcType=VARCHAR}, 
+      #{mEndTime,jdbcType=VARCHAR}, #{calorie,jdbcType=DOUBLE}, #{speed,jdbcType=DOUBLE}, 
+      #{distribution,jdbcType=DOUBLE}, #{dateTag,jdbcType=VARCHAR}, #{pathline,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="top.su_root.run_server.entity.RunRecord">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into run_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="account != null">
+        account,
+      </if>
+      <if test="distance != null">
+        distance,
+      </if>
+      <if test="duration != null">
+        duration,
+      </if>
+      <if test="startpoint != null">
+        startPoint,
+      </if>
+      <if test="endpoint != null">
+        endPoint,
+      </if>
+      <if test="mStartTime != null">
+        m_start_time,
+      </if>
+      <if test="mEndTime != null">
+        m_end_time,
+      </if>
+      <if test="calorie != null">
+        calorie,
+      </if>
+      <if test="speed != null">
+        speed,
+      </if>
+      <if test="distribution != null">
+        distribution,
+      </if>
+      <if test="dateTag != null">
+        date_tag,
+      </if>
+      <if test="pathline != null">
+        pathLine,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="account != null">
+        #{account,jdbcType=CHAR},
+      </if>
+      <if test="distance != null">
+        #{distance,jdbcType=DOUBLE},
+      </if>
+      <if test="duration != null">
+        #{duration,jdbcType=VARCHAR},
+      </if>
+      <if test="startpoint != null">
+        #{startpoint,jdbcType=VARCHAR},
+      </if>
+      <if test="endpoint != null">
+        #{endpoint,jdbcType=VARCHAR},
+      </if>
+      <if test="mStartTime != null">
+        #{mStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mEndTime != null">
+        #{mEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="calorie != null">
+        #{calorie,jdbcType=DOUBLE},
+      </if>
+      <if test="speed != null">
+        #{speed,jdbcType=DOUBLE},
+      </if>
+      <if test="distribution != null">
+        #{distribution,jdbcType=DOUBLE},
+      </if>
+      <if test="dateTag != null">
+        #{dateTag,jdbcType=VARCHAR},
+      </if>
+      <if test="pathline != null">
+        #{pathline,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="top.su_root.run_server.entity.RunRecordExample" resultType="java.lang.Long">
+    select count(*) from run_record
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update run_record
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.account != null">
+        account = #{record.account,jdbcType=CHAR},
+      </if>
+      <if test="record.distance != null">
+        distance = #{record.distance,jdbcType=DOUBLE},
+      </if>
+      <if test="record.duration != null">
+        duration = #{record.duration,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startpoint != null">
+        startPoint = #{record.startpoint,jdbcType=VARCHAR},
+      </if>
+      <if test="record.endpoint != null">
+        endPoint = #{record.endpoint,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mStartTime != null">
+        m_start_time = #{record.mStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mEndTime != null">
+        m_end_time = #{record.mEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.calorie != null">
+        calorie = #{record.calorie,jdbcType=DOUBLE},
+      </if>
+      <if test="record.speed != null">
+        speed = #{record.speed,jdbcType=DOUBLE},
+      </if>
+      <if test="record.distribution != null">
+        distribution = #{record.distribution,jdbcType=DOUBLE},
+      </if>
+      <if test="record.dateTag != null">
+        date_tag = #{record.dateTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pathline != null">
+        pathLine = #{record.pathline,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update run_record
+    set id = #{record.id,jdbcType=BIGINT},
+      account = #{record.account,jdbcType=CHAR},
+      distance = #{record.distance,jdbcType=DOUBLE},
+      duration = #{record.duration,jdbcType=VARCHAR},
+      startPoint = #{record.startpoint,jdbcType=VARCHAR},
+      endPoint = #{record.endpoint,jdbcType=VARCHAR},
+      m_start_time = #{record.mStartTime,jdbcType=VARCHAR},
+      m_end_time = #{record.mEndTime,jdbcType=VARCHAR},
+      calorie = #{record.calorie,jdbcType=DOUBLE},
+      speed = #{record.speed,jdbcType=DOUBLE},
+      distribution = #{record.distribution,jdbcType=DOUBLE},
+      date_tag = #{record.dateTag,jdbcType=VARCHAR},
+      pathLine = #{record.pathline,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update run_record
+    set id = #{record.id,jdbcType=BIGINT},
+      account = #{record.account,jdbcType=CHAR},
+      distance = #{record.distance,jdbcType=DOUBLE},
+      duration = #{record.duration,jdbcType=VARCHAR},
+      startPoint = #{record.startpoint,jdbcType=VARCHAR},
+      endPoint = #{record.endpoint,jdbcType=VARCHAR},
+      m_start_time = #{record.mStartTime,jdbcType=VARCHAR},
+      m_end_time = #{record.mEndTime,jdbcType=VARCHAR},
+      calorie = #{record.calorie,jdbcType=DOUBLE},
+      speed = #{record.speed,jdbcType=DOUBLE},
+      distribution = #{record.distribution,jdbcType=DOUBLE},
+      date_tag = #{record.dateTag,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="top.su_root.run_server.entity.RunRecord">
+    update run_record
+    <set>
+      <if test="account != null">
+        account = #{account,jdbcType=CHAR},
+      </if>
+      <if test="distance != null">
+        distance = #{distance,jdbcType=DOUBLE},
+      </if>
+      <if test="duration != null">
+        duration = #{duration,jdbcType=VARCHAR},
+      </if>
+      <if test="startpoint != null">
+        startPoint = #{startpoint,jdbcType=VARCHAR},
+      </if>
+      <if test="endpoint != null">
+        endPoint = #{endpoint,jdbcType=VARCHAR},
+      </if>
+      <if test="mStartTime != null">
+        m_start_time = #{mStartTime,jdbcType=VARCHAR},
+      </if>
+      <if test="mEndTime != null">
+        m_end_time = #{mEndTime,jdbcType=VARCHAR},
+      </if>
+      <if test="calorie != null">
+        calorie = #{calorie,jdbcType=DOUBLE},
+      </if>
+      <if test="speed != null">
+        speed = #{speed,jdbcType=DOUBLE},
+      </if>
+      <if test="distribution != null">
+        distribution = #{distribution,jdbcType=DOUBLE},
+      </if>
+      <if test="dateTag != null">
+        date_tag = #{dateTag,jdbcType=VARCHAR},
+      </if>
+      <if test="pathline != null">
+        pathLine = #{pathline,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="top.su_root.run_server.entity.RunRecord">
+    update run_record
+    set account = #{account,jdbcType=CHAR},
+      distance = #{distance,jdbcType=DOUBLE},
+      duration = #{duration,jdbcType=VARCHAR},
+      startPoint = #{startpoint,jdbcType=VARCHAR},
+      endPoint = #{endpoint,jdbcType=VARCHAR},
+      m_start_time = #{mStartTime,jdbcType=VARCHAR},
+      m_end_time = #{mEndTime,jdbcType=VARCHAR},
+      calorie = #{calorie,jdbcType=DOUBLE},
+      speed = #{speed,jdbcType=DOUBLE},
+      distribution = #{distribution,jdbcType=DOUBLE},
+      date_tag = #{dateTag,jdbcType=VARCHAR},
+      pathLine = #{pathline,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="top.su_root.run_server.entity.RunRecord">
+    update run_record
+    set account = #{account,jdbcType=CHAR},
+      distance = #{distance,jdbcType=DOUBLE},
+      duration = #{duration,jdbcType=VARCHAR},
+      startPoint = #{startpoint,jdbcType=VARCHAR},
+      endPoint = #{endpoint,jdbcType=VARCHAR},
+      m_start_time = #{mStartTime,jdbcType=VARCHAR},
+      m_end_time = #{mEndTime,jdbcType=VARCHAR},
+      calorie = #{calorie,jdbcType=DOUBLE},
+      speed = #{speed,jdbcType=DOUBLE},
+      distribution = #{distribution,jdbcType=DOUBLE},
+      date_tag = #{dateTag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
