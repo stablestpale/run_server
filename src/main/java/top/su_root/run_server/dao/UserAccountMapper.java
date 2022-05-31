@@ -1,4 +1,4 @@
-package top.su_root.run_server.dao.mapper;
+package top.su_root.run_server.dao;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;

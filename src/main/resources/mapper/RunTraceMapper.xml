@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="top.su_root.run_server.dao.mapper.RunTraceMapper">
+<mapper namespace="top.su_root.run_server.dao.RunTraceMapper">
   <resultMap id="BaseResultMap" type="top.su_root.run_server.entity.RunTrace">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="record_id" jdbcType="INTEGER" property="recordId" />
