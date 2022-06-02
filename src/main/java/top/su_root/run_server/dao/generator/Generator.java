@@ -22,11 +22,11 @@ import java.util.List;
 
 public class Generator {
     public static void main(String[] args) throws Exception {
-        //MBG 执行过程中的警告信息
+        // MBG 执行过程中的警告信息
         List<String> warnings = new ArrayList<String>();
-        //当生成的代码重复时，覆盖原代码
+        // 当生成的代码重复时，覆盖原代码
         boolean overwrite = true;
-        //读取我们的 MBG 配置文件
+        // 读取 MBG 配置文件
         InputStream is = Generator.class.getResourceAsStream("/generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = null;
@@ -40,14 +40,14 @@ public class Generator {
         }
 
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
-        //创建MBG
+        // 创建MBG
         MyBatisGenerator myBatisGenerator = null;
         try {
             myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         } catch (InvalidConfigurationException e){
             e.printStackTrace();
         }
-        //执行生成代码
+        // 执行生成代码
         try{
             myBatisGenerator.generate(null);
         } catch (SQLException e){
@@ -58,7 +58,7 @@ public class Generator {
             e.printStackTrace();
         }
 
-        //输出警告信息
+        // 输出警告信息
         for (String warning : warnings) {
             System.out.println(warning);
         }
