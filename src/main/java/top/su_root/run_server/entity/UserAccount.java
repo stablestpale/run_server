@@ -38,4 +38,9 @@ public class UserAccount implements Serializable {
         sb.append("]");
         return sb.toString();
     }
+
+    public UserAccount(String account, String psd) {
+        this.account = account;
+        this.psd = psd;
+    }
 }

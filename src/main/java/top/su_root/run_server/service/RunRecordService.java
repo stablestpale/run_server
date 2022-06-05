@@ -18,7 +18,7 @@ public interface RunRecordService {
 
     List<RunRecord> queryRunRecordListByAccountAndDate(String account, String dateTag);
 
-    RunRecord queryRecord(String account, String startTime, String endTime);
+    RunRecord queryRecord(Integer id);
 
     List<RunTrace> queryRunTraceListByRecordId(Integer recordId);
 }

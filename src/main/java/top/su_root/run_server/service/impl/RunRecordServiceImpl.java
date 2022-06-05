@@ -73,9 +73,9 @@ public class RunRecordServiceImpl implements RunRecordService {
      * @return: RunRecord
      */
     @Override
-    public RunRecord queryRecord(String account, String startTime, String endTime) {
+    public RunRecord queryRecord(Integer id) {
         RunRecordExample runRecordExample = new RunRecordExample();
-        runRecordExample.createCriteria().andAccountEqualTo(account).andMStartTimeEqualTo(startTime).andMEndTimeEqualTo(endTime);
+        runRecordExample.createCriteria().andIdEqualTo(Long.valueOf(id));
         List<RunRecord> runRecords = runRecordMapper.selectByExample(runRecordExample);
         if(runRecords.size() != 1) {
             return null;
