@@ -12,6 +12,11 @@ public class RunTrace implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public RunTrace(Integer recordId, String trace) {
+        this.recordId = recordId;
+        this.trace = trace;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -48,10 +53,5 @@ public class RunTrace implements Serializable {
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
-    }
-
-    public RunTrace(Integer recordId, String trace) {
-        this.recordId = recordId;
-        this.trace = trace;
     }
 }

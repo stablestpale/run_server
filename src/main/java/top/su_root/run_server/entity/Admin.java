@@ -12,6 +12,11 @@ public class Admin implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public Admin(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
     public Integer getId() {
         return id;
     }
