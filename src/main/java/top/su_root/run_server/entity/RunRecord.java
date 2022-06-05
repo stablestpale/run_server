@@ -12,9 +12,9 @@ public class RunRecord implements Serializable {
 
     private String duration;
 
-    private String startpoint;
+    private String startPoint;
 
-    private String endpoint;
+    private String endPoint;
 
     private String mStartTime;
 
@@ -28,7 +28,7 @@ public class RunRecord implements Serializable {
 
     private String dateTag;
 
-    private String pathline;
+    private String path;
 
     private static final long serialVersionUID = 1L;
 
@@ -64,20 +64,20 @@ public class RunRecord implements Serializable {
         this.duration = duration;
     }
 
-    public String getStartpoint() {
-        return startpoint;
+    public String getStartPoint() {
+        return startPoint;
     }
 
-    public void setStartpoint(String startpoint) {
-        this.startpoint = startpoint;
+    public void setStartPoint(String startPoint) {
+        this.startPoint = startPoint;
     }
 
-    public String getEndpoint() {
-        return endpoint;
+    public String getEndPoint() {
+        return endPoint;
     }
 
-    public void setEndpoint(String endpoint) {
-        this.endpoint = endpoint;
+    public void setEndPoint(String endPoint) {
+        this.endPoint = endPoint;
     }
 
     public String getmStartTime() {
@@ -128,12 +128,12 @@ public class RunRecord implements Serializable {
         this.dateTag = dateTag;
     }
 
-    public String getPathline() {
-        return pathline;
+    public String getPath() {
+        return path;
     }
 
-    public void setPathline(String pathline) {
-        this.pathline = pathline;
+    public void setPath(String path) {
+        this.path = path;
     }
 
     @Override
@@ -146,15 +146,15 @@ public class RunRecord implements Serializable {
         sb.append(", account=").append(account);
         sb.append(", distance=").append(distance);
         sb.append(", duration=").append(duration);
-        sb.append(", startpoint=").append(startpoint);
-        sb.append(", endpoint=").append(endpoint);
+        sb.append(", startPoint=").append(startPoint);
+        sb.append(", endPoint=").append(endPoint);
         sb.append(", mStartTime=").append(mStartTime);
         sb.append(", mEndTime=").append(mEndTime);
         sb.append(", calorie=").append(calorie);
         sb.append(", speed=").append(speed);
         sb.append(", distribution=").append(distribution);
         sb.append(", dateTag=").append(dateTag);
-        sb.append(", pathline=").append(pathline);
+        sb.append(", path=").append(path);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

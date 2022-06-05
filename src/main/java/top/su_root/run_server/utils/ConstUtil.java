@@ -12,4 +12,5 @@ public class ConstUtil {
     //Swagger-UI
     public static final String RUN_RECORD = "runRecord";
     public static final String USER_ACCOUNT = "userAccount";
+    public static final String ADMIN = "admin";
 }

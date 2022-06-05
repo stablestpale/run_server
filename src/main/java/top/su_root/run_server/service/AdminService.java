@@ -1,5 +1,10 @@
 package top.su_root.run_server.service;
 
+import top.su_root.run_server.entity.Admin;
+import top.su_root.run_server.entity.UserInfo;
+
+import java.util.List;
+
 /**
  * @author zzy
  * @description:
@@ -8,4 +13,8 @@ package top.su_root.run_server.service;
 
 
 public interface AdminService {
+
+    boolean login(Admin admin);
+
+    List<UserInfo> queryUserInfo();
 }

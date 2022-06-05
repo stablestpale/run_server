@@ -13,8 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
 import java.util.List;
 
-import static top.su_root.run_server.utils.ConstUtil.RUN_RECORD;
-import static top.su_root.run_server.utils.ConstUtil.USER_ACCOUNT;
+import static top.su_root.run_server.utils.ConstUtil.*;
 
 /**
  * @author zzy
@@ -33,6 +32,7 @@ public class Swagger2Config {
                 .apiInfo(apiInfo())
                 .tags(new Tag(USER_ACCOUNT, "用户账户"))
                 .tags(new Tag(RUN_RECORD, "跑步数据"))
+                .tags(new Tag(ADMIN, "管理账户"))
 /*                .select()
                 //为当前包下controller生成API文档
                 .apis(RequestHandlerSelectors.basePackage("com.test.mall.demo.controller"))

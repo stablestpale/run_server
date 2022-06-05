@@ -1,5 +1,10 @@
 package top.su_root.run_server.service;
 
+import top.su_root.run_server.entity.RunRecord;
+import top.su_root.run_server.entity.RunTrace;
+
+import java.util.List;
+
 /**
  * @author zzy
  * @description:
@@ -7,4 +12,13 @@ package top.su_root.run_server.service;
  */
 
 public interface RunRecordService {
+    void insertRunRecord(RunRecord runRecord);
+
+    List<RunRecord> queryRunRecordListByAccount(String account);
+
+    List<RunRecord> queryRunRecordListByAccountAndDate(String account, String dateTag);
+
+    RunRecord queryRecord(String account, String startTime, String endTime);
+
+    List<RunTrace> queryRunTraceListByRecordId(Integer recordId);
 }

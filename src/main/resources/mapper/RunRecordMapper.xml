@@ -6,8 +6,8 @@
     <result column="account" jdbcType="CHAR" property="account" />
     <result column="distance" jdbcType="DOUBLE" property="distance" />
     <result column="duration" jdbcType="VARCHAR" property="duration" />
-    <result column="startPoint" jdbcType="VARCHAR" property="startpoint" />
-    <result column="endPoint" jdbcType="VARCHAR" property="endpoint" />
+    <result column="start_point" jdbcType="VARCHAR" property="startPoint" />
+    <result column="end_point" jdbcType="VARCHAR" property="endPoint" />
     <result column="m_start_time" jdbcType="VARCHAR" property="mStartTime" />
     <result column="m_end_time" jdbcType="VARCHAR" property="mEndTime" />
     <result column="calorie" jdbcType="DOUBLE" property="calorie" />
@@ -16,7 +16,7 @@
     <result column="date_tag" jdbcType="VARCHAR" property="dateTag" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="top.su_root.run_server.entity.RunRecord">
-    <result column="pathLine" jdbcType="LONGVARCHAR" property="pathline" />
+    <result column="path" jdbcType="LONGVARCHAR" property="path" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -77,11 +77,11 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, account, distance, duration, startPoint, endPoint, m_start_time, m_end_time, 
+    id, account, distance, duration, start_point, end_point, m_start_time, m_end_time, 
     calorie, speed, distribution, date_tag
   </sql>
   <sql id="Blob_Column_List">
-    pathLine
+    path
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="top.su_root.run_server.entity.RunRecordExample" resultMap="ResultMapWithBLOBs">
     select
@@ -136,14 +136,14 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into run_record (account, distance, duration, 
-      startPoint, endPoint, m_start_time, 
+      start_point, end_point, m_start_time, 
       m_end_time, calorie, speed, 
-      distribution, date_tag, pathLine
+      distribution, date_tag, path
       )
     values (#{account,jdbcType=CHAR}, #{distance,jdbcType=DOUBLE}, #{duration,jdbcType=VARCHAR}, 
-      #{startpoint,jdbcType=VARCHAR}, #{endpoint,jdbcType=VARCHAR}, #{mStartTime,jdbcType=VARCHAR}, 
+      #{startPoint,jdbcType=VARCHAR}, #{endPoint,jdbcType=VARCHAR}, #{mStartTime,jdbcType=VARCHAR}, 
       #{mEndTime,jdbcType=VARCHAR}, #{calorie,jdbcType=DOUBLE}, #{speed,jdbcType=DOUBLE}, 
-      #{distribution,jdbcType=DOUBLE}, #{dateTag,jdbcType=VARCHAR}, #{pathline,jdbcType=LONGVARCHAR}
+      #{distribution,jdbcType=DOUBLE}, #{dateTag,jdbcType=VARCHAR}, #{path,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="top.su_root.run_server.entity.RunRecord">
@@ -161,11 +161,11 @@
       <if test="duration != null">
         duration,
       </if>
-      <if test="startpoint != null">
-        startPoint,
+      <if test="startPoint != null">
+        start_point,
       </if>
-      <if test="endpoint != null">
-        endPoint,
+      <if test="endPoint != null">
+        end_point,
       </if>
       <if test="mStartTime != null">
         m_start_time,
@@ -185,8 +185,8 @@
       <if test="dateTag != null">
         date_tag,
       </if>
-      <if test="pathline != null">
-        pathLine,
+      <if test="path != null">
+        path,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -199,11 +199,11 @@
       <if test="duration != null">
         #{duration,jdbcType=VARCHAR},
       </if>
-      <if test="startpoint != null">
-        #{startpoint,jdbcType=VARCHAR},
+      <if test="startPoint != null">
+        #{startPoint,jdbcType=VARCHAR},
       </if>
-      <if test="endpoint != null">
-        #{endpoint,jdbcType=VARCHAR},
+      <if test="endPoint != null">
+        #{endPoint,jdbcType=VARCHAR},
       </if>
       <if test="mStartTime != null">
         #{mStartTime,jdbcType=VARCHAR},
@@ -223,8 +223,8 @@
       <if test="dateTag != null">
         #{dateTag,jdbcType=VARCHAR},
       </if>
-      <if test="pathline != null">
-        #{pathline,jdbcType=LONGVARCHAR},
+      <if test="path != null">
+        #{path,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -249,11 +249,11 @@
       <if test="record.duration != null">
         duration = #{record.duration,jdbcType=VARCHAR},
       </if>
-      <if test="record.startpoint != null">
-        startPoint = #{record.startpoint,jdbcType=VARCHAR},
+      <if test="record.startPoint != null">
+        start_point = #{record.startPoint,jdbcType=VARCHAR},
       </if>
-      <if test="record.endpoint != null">
-        endPoint = #{record.endpoint,jdbcType=VARCHAR},
+      <if test="record.endPoint != null">
+        end_point = #{record.endPoint,jdbcType=VARCHAR},
       </if>
       <if test="record.mStartTime != null">
         m_start_time = #{record.mStartTime,jdbcType=VARCHAR},
@@ -273,8 +273,8 @@
       <if test="record.dateTag != null">
         date_tag = #{record.dateTag,jdbcType=VARCHAR},
       </if>
-      <if test="record.pathline != null">
-        pathLine = #{record.pathline,jdbcType=LONGVARCHAR},
+      <if test="record.path != null">
+        path = #{record.path,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -287,15 +287,15 @@
       account = #{record.account,jdbcType=CHAR},
       distance = #{record.distance,jdbcType=DOUBLE},
       duration = #{record.duration,jdbcType=VARCHAR},
-      startPoint = #{record.startpoint,jdbcType=VARCHAR},
-      endPoint = #{record.endpoint,jdbcType=VARCHAR},
+      start_point = #{record.startPoint,jdbcType=VARCHAR},
+      end_point = #{record.endPoint,jdbcType=VARCHAR},
       m_start_time = #{record.mStartTime,jdbcType=VARCHAR},
       m_end_time = #{record.mEndTime,jdbcType=VARCHAR},
       calorie = #{record.calorie,jdbcType=DOUBLE},
       speed = #{record.speed,jdbcType=DOUBLE},
       distribution = #{record.distribution,jdbcType=DOUBLE},
       date_tag = #{record.dateTag,jdbcType=VARCHAR},
-      pathLine = #{record.pathline,jdbcType=LONGVARCHAR}
+      path = #{record.path,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -306,8 +306,8 @@
       account = #{record.account,jdbcType=CHAR},
       distance = #{record.distance,jdbcType=DOUBLE},
       duration = #{record.duration,jdbcType=VARCHAR},
-      startPoint = #{record.startpoint,jdbcType=VARCHAR},
-      endPoint = #{record.endpoint,jdbcType=VARCHAR},
+      start_point = #{record.startPoint,jdbcType=VARCHAR},
+      end_point = #{record.endPoint,jdbcType=VARCHAR},
       m_start_time = #{record.mStartTime,jdbcType=VARCHAR},
       m_end_time = #{record.mEndTime,jdbcType=VARCHAR},
       calorie = #{record.calorie,jdbcType=DOUBLE},
@@ -330,11 +330,11 @@
       <if test="duration != null">
         duration = #{duration,jdbcType=VARCHAR},
       </if>
-      <if test="startpoint != null">
-        startPoint = #{startpoint,jdbcType=VARCHAR},
+      <if test="startPoint != null">
+        start_point = #{startPoint,jdbcType=VARCHAR},
       </if>
-      <if test="endpoint != null">
-        endPoint = #{endpoint,jdbcType=VARCHAR},
+      <if test="endPoint != null">
+        end_point = #{endPoint,jdbcType=VARCHAR},
       </if>
       <if test="mStartTime != null">
         m_start_time = #{mStartTime,jdbcType=VARCHAR},
@@ -354,8 +354,8 @@
       <if test="dateTag != null">
         date_tag = #{dateTag,jdbcType=VARCHAR},
       </if>
-      <if test="pathline != null">
-        pathLine = #{pathline,jdbcType=LONGVARCHAR},
+      <if test="path != null">
+        path = #{path,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -365,15 +365,15 @@
     set account = #{account,jdbcType=CHAR},
       distance = #{distance,jdbcType=DOUBLE},
       duration = #{duration,jdbcType=VARCHAR},
-      startPoint = #{startpoint,jdbcType=VARCHAR},
-      endPoint = #{endpoint,jdbcType=VARCHAR},
+      start_point = #{startPoint,jdbcType=VARCHAR},
+      end_point = #{endPoint,jdbcType=VARCHAR},
       m_start_time = #{mStartTime,jdbcType=VARCHAR},
       m_end_time = #{mEndTime,jdbcType=VARCHAR},
       calorie = #{calorie,jdbcType=DOUBLE},
       speed = #{speed,jdbcType=DOUBLE},
       distribution = #{distribution,jdbcType=DOUBLE},
       date_tag = #{dateTag,jdbcType=VARCHAR},
-      pathLine = #{pathline,jdbcType=LONGVARCHAR}
+      path = #{path,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="top.su_root.run_server.entity.RunRecord">
@@ -381,8 +381,8 @@
     set account = #{account,jdbcType=CHAR},
       distance = #{distance,jdbcType=DOUBLE},
       duration = #{duration,jdbcType=VARCHAR},
-      startPoint = #{startpoint,jdbcType=VARCHAR},
-      endPoint = #{endpoint,jdbcType=VARCHAR},
+      start_point = #{startPoint,jdbcType=VARCHAR},
+      end_point = #{endPoint,jdbcType=VARCHAR},
       m_start_time = #{mStartTime,jdbcType=VARCHAR},
       m_end_time = #{mEndTime,jdbcType=VARCHAR},
       calorie = #{calorie,jdbcType=DOUBLE},

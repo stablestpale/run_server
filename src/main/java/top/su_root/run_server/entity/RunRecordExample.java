@@ -364,143 +364,143 @@ public class RunRecordExample {
             return (Criteria) this;
         }
 
-        public Criteria andStartpointIsNull() {
-            addCriterion("startPoint is null");
+        public Criteria andStartPointIsNull() {
+            addCriterion("start_point is null");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointIsNotNull() {
-            addCriterion("startPoint is not null");
+        public Criteria andStartPointIsNotNull() {
+            addCriterion("start_point is not null");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointEqualTo(String value) {
-            addCriterion("startPoint =", value, "startpoint");
+        public Criteria andStartPointEqualTo(String value) {
+            addCriterion("start_point =", value, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointNotEqualTo(String value) {
-            addCriterion("startPoint <>", value, "startpoint");
+        public Criteria andStartPointNotEqualTo(String value) {
+            addCriterion("start_point <>", value, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointGreaterThan(String value) {
-            addCriterion("startPoint >", value, "startpoint");
+        public Criteria andStartPointGreaterThan(String value) {
+            addCriterion("start_point >", value, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointGreaterThanOrEqualTo(String value) {
-            addCriterion("startPoint >=", value, "startpoint");
+        public Criteria andStartPointGreaterThanOrEqualTo(String value) {
+            addCriterion("start_point >=", value, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointLessThan(String value) {
-            addCriterion("startPoint <", value, "startpoint");
+        public Criteria andStartPointLessThan(String value) {
+            addCriterion("start_point <", value, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointLessThanOrEqualTo(String value) {
-            addCriterion("startPoint <=", value, "startpoint");
+        public Criteria andStartPointLessThanOrEqualTo(String value) {
+            addCriterion("start_point <=", value, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointLike(String value) {
-            addCriterion("startPoint like", value, "startpoint");
+        public Criteria andStartPointLike(String value) {
+            addCriterion("start_point like", value, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointNotLike(String value) {
-            addCriterion("startPoint not like", value, "startpoint");
+        public Criteria andStartPointNotLike(String value) {
+            addCriterion("start_point not like", value, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointIn(List<String> values) {
-            addCriterion("startPoint in", values, "startpoint");
+        public Criteria andStartPointIn(List<String> values) {
+            addCriterion("start_point in", values, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointNotIn(List<String> values) {
-            addCriterion("startPoint not in", values, "startpoint");
+        public Criteria andStartPointNotIn(List<String> values) {
+            addCriterion("start_point not in", values, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointBetween(String value1, String value2) {
-            addCriterion("startPoint between", value1, value2, "startpoint");
+        public Criteria andStartPointBetween(String value1, String value2) {
+            addCriterion("start_point between", value1, value2, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andStartpointNotBetween(String value1, String value2) {
-            addCriterion("startPoint not between", value1, value2, "startpoint");
+        public Criteria andStartPointNotBetween(String value1, String value2) {
+            addCriterion("start_point not between", value1, value2, "startPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointIsNull() {
-            addCriterion("endPoint is null");
+        public Criteria andEndPointIsNull() {
+            addCriterion("end_point is null");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointIsNotNull() {
-            addCriterion("endPoint is not null");
+        public Criteria andEndPointIsNotNull() {
+            addCriterion("end_point is not null");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointEqualTo(String value) {
-            addCriterion("endPoint =", value, "endpoint");
+        public Criteria andEndPointEqualTo(String value) {
+            addCriterion("end_point =", value, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointNotEqualTo(String value) {
-            addCriterion("endPoint <>", value, "endpoint");
+        public Criteria andEndPointNotEqualTo(String value) {
+            addCriterion("end_point <>", value, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointGreaterThan(String value) {
-            addCriterion("endPoint >", value, "endpoint");
+        public Criteria andEndPointGreaterThan(String value) {
+            addCriterion("end_point >", value, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointGreaterThanOrEqualTo(String value) {
-            addCriterion("endPoint >=", value, "endpoint");
+        public Criteria andEndPointGreaterThanOrEqualTo(String value) {
+            addCriterion("end_point >=", value, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointLessThan(String value) {
-            addCriterion("endPoint <", value, "endpoint");
+        public Criteria andEndPointLessThan(String value) {
+            addCriterion("end_point <", value, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointLessThanOrEqualTo(String value) {
-            addCriterion("endPoint <=", value, "endpoint");
+        public Criteria andEndPointLessThanOrEqualTo(String value) {
+            addCriterion("end_point <=", value, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointLike(String value) {
-            addCriterion("endPoint like", value, "endpoint");
+        public Criteria andEndPointLike(String value) {
+            addCriterion("end_point like", value, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointNotLike(String value) {
-            addCriterion("endPoint not like", value, "endpoint");
+        public Criteria andEndPointNotLike(String value) {
+            addCriterion("end_point not like", value, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointIn(List<String> values) {
-            addCriterion("endPoint in", values, "endpoint");
+        public Criteria andEndPointIn(List<String> values) {
+            addCriterion("end_point in", values, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointNotIn(List<String> values) {
-            addCriterion("endPoint not in", values, "endpoint");
+        public Criteria andEndPointNotIn(List<String> values) {
+            addCriterion("end_point not in", values, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointBetween(String value1, String value2) {
-            addCriterion("endPoint between", value1, value2, "endpoint");
+        public Criteria andEndPointBetween(String value1, String value2) {
+            addCriterion("end_point between", value1, value2, "endPoint");
             return (Criteria) this;
         }
 
-        public Criteria andEndpointNotBetween(String value1, String value2) {
-            addCriterion("endPoint not between", value1, value2, "endpoint");
+        public Criteria andEndPointNotBetween(String value1, String value2) {
+            addCriterion("end_point not between", value1, value2, "endPoint");
             return (Criteria) this;
         }
 

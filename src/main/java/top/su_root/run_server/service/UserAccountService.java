@@ -1,5 +1,7 @@
 package top.su_root.run_server.service;
 
+import top.su_root.run_server.entity.UserAccount;
+
 /**
  * @author zzy
  * @description:
@@ -8,5 +10,9 @@ package top.su_root.run_server.service;
 
 public interface UserAccountService {
 
+    boolean insertAccount(UserAccount userAccount);
 
+    boolean checkAccount(String account);
+
+    boolean login(UserAccount userAccount);
 }

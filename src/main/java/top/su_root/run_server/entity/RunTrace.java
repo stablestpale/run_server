@@ -49,4 +49,9 @@ public class RunTrace implements Serializable {
         sb.append("]");
         return sb.toString();
     }
+
+    public RunTrace(Integer recordId, String trace) {
+        this.recordId = recordId;
+        this.trace = trace;
+    }
 }
