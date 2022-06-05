@@ -1,8 +1,14 @@
 package top.su_root.run_server.entity;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class RunTrace implements Serializable {
     private Integer id;
 

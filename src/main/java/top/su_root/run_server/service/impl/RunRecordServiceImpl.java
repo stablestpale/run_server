@@ -36,7 +36,7 @@ public class RunRecordServiceImpl implements RunRecordService {
     @Override
     public void insertRunRecord(RunRecord runRecord) {
         int recordId = runRecordMapper.insert(runRecord);
-        String[] traces = runRecord.getPath().split(",");
+        String[] traces = runRecord.getPath().split(";");
         for(String trace: traces) {
             RunTrace runTrace = new RunTrace(recordId, trace);
             runTraceMapper.insert(runTrace);
@@ -52,7 +52,7 @@ public class RunRecordServiceImpl implements RunRecordService {
     public List<RunRecord> queryRunRecordListByAccount(String account) {
         RunRecordExample runRecordExample = new RunRecordExample();
         runRecordExample.createCriteria().andAccountEqualTo(account);
-        return runRecordMapper.selectByExample(runRecordExample);
+        return runRecordMapper.selectByExampleWithBLOBs(runRecordExample);
     }
 
     /*
@@ -64,7 +64,7 @@ public class RunRecordServiceImpl implements RunRecordService {
     public List<RunRecord> queryRunRecordListByAccountAndDate(String account, String dateTag) {
         RunRecordExample runRecordExample = new RunRecordExample();
         runRecordExample.createCriteria().andAccountEqualTo(account).andDateTagEqualTo(dateTag);
-        return runRecordMapper.selectByExample(runRecordExample);
+        return runRecordMapper.selectByExampleWithBLOBs(runRecordExample);
     }
 
     /*

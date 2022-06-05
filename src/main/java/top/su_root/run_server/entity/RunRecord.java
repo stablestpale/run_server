@@ -1,8 +1,14 @@
 package top.su_root.run_server.entity;
 
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
+@NoArgsConstructor
+@AllArgsConstructor
 public class RunRecord implements Serializable {
     private Long id;
 

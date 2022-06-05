@@ -36,8 +36,6 @@ public class UserAccountController {
      */
     @PostMapping(REGISTER)
     @ApiOperation(API_REGISTER)
-    @ApiImplicitParam(name = "token", value = "token", required = true, paramType = "header", dataTypeClass = String.class)
-    @PermissionHelper(PermissionHelper.USER)
     public BaseResult<String> register(@RequestBody UserAccount user) {
         userAccountService.insertAccount(user);
         return BaseResult.success(QUERY_SUCCESS);
