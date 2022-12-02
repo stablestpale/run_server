@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-02T08:58:34.673Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.56" etag="ooVn7eNvl_S88dR9TE9z" version="20.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-02T09:04:33.979Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.56" etag="4fqRJET3AReUQezd46GJ" version="20.6.0" type="github">
   <diagram id="VuqIn1j-NX3XL-rteJBP" name="Page-1">
     <mxGraphModel dx="749" dy="448" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -213,7 +213,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="9blAbufQynS0PyvFg4JM-58" value="&lt;div style=&quot;background-color: rgb(255, 255, 255); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;font color=&quot;#6f42c1&quot;&gt;TestService&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #6f42c1;&quot;&gt;getData&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="540.68" y="1180" width="110" height="60" as="geometry" />
+          <mxGeometry x="545.68" y="1230" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="9blAbufQynS0PyvFg4JM-60" value="SegmentTestAPI-AzureServer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="535.6800000000002" y="1349" width="120" height="60" as="geometry" />
@@ -253,6 +253,12 @@
           <mxGeometry x="318.6266666666667" y="1210" as="geometry">
             <mxPoint x="-126" y="46" as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-84" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=blockThin;endFill=1;" edge="1" parent="1" source="9blAbufQynS0PyvFg4JM-83" target="9blAbufQynS0PyvFg4JM-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-83" value="cosmosdb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="545.6800000000001" y="1140" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
