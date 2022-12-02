@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-12-02T00:48:03.509Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.56" etag="ZWx27YT4rOeXZi0jRACP" version="20.6.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-12-02T01:24:28.588Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.56" etag="1iQ96Y3_m2qeyrfowRSB" version="20.6.0" type="github">
   <diagram id="VuqIn1j-NX3XL-rteJBP" name="Page-1">
     <mxGraphModel dx="899" dy="538" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -6,6 +6,73 @@
         <mxCell id="1" parent="0" />
         <mxCell id="d23jx_JjnTftPRl26lCg-1" value="SegmentTestAPI--AzureServer" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="330" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-1" value="GET /run/test?projectName=..." style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="240" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-2" value="Get /run/api" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="240" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-3" value="Azure Application Insights" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="175" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-4" value="SegmentTestAPI-V2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="505" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-6" value="cosmosdb:&lt;br&gt;errormessages&lt;br&gt;testmessages" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-7" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="9blAbufQynS0PyvFg4JM-1" target="d23jx_JjnTftPRl26lCg-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="370" as="sourcePoint" />
+            <mxPoint x="450" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-8" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="9blAbufQynS0PyvFg4JM-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="290" as="sourcePoint" />
+            <mxPoint x="390" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-9" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="9blAbufQynS0PyvFg4JM-3" target="9blAbufQynS0PyvFg4JM-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="220" y="360" as="sourcePoint" />
+            <mxPoint x="180" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-10" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="9blAbufQynS0PyvFg4JM-1" target="9blAbufQynS0PyvFg4JM-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="245" y="370" as="sourcePoint" />
+            <mxPoint x="340" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=blockThin;startFill=1;" edge="1" parent="1" source="9blAbufQynS0PyvFg4JM-4" target="9blAbufQynS0PyvFg4JM-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="360" as="sourcePoint" />
+            <mxPoint x="610" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-18" value="use AzureServer to &lt;br&gt;check api in 3 locations" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9blAbufQynS0PyvFg4JM-13">
+          <mxGeometry x="-0.3948" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fillColor=#d5e8d4;strokeColor=#82b366;startArrow=blockThin;startFill=1;" edge="1" parent="1" source="9blAbufQynS0PyvFg4JM-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="575" y="370" as="sourcePoint" />
+            <mxPoint x="565" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-19" value="request api" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="9blAbufQynS0PyvFg4JM-14">
+          <mxGeometry x="-0.5345" y="-2" relative="1" as="geometry">
+            <mxPoint x="2" y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-15" value="&lt;span style=&quot;color: rgb(111, 66, 193); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;runService&lt;/span&gt;&lt;br style=&quot;color: rgb(111, 66, 193); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;&lt;div style=&quot;color: rgb(36, 41, 46); background-color: rgb(255, 255, 255); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #6f42c1;&quot;&gt;checkTestMessage&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="285" y="350" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="9blAbufQynS0PyvFg4JM-16" value="&lt;span style=&quot;color: rgb(111, 66, 193); background-color: rgb(255, 255, 255); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px;&quot;&gt;runService&lt;br&gt;getApiData&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="350" width="110" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
