@@ -1,1 +1,13 @@
-<mxfile host="app.diagrams.net" modified="2022-12-02T00:41:29.326Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.56" etag="XMS9ziKs-UH1MN83WUaf" version="20.6.0" type="github"><diagram id="VuqIn1j-NX3XL-rteJBP" name="Page-1">jZLbaoQwEIafxsuCGmp7XbttKRRKXehlCWY2yRKNxLFqn76xTjywLPRGZr45ZPxnIpZXw7PjjXqzAkyUxmKI2GOUplka++8Exhmwu2QG0mkxow0o9A8QpDrZaQHtLhGtNaibPSxtXUOJO8ads/0+7WTN/tWGS7gARcnNJf3UAtVM72/jlb+Aliq8nMQUqXhIJtAqLmy/QewQsdxZi7NVDTmYSbugy1z3dCW6DOagxv8UiJSdh6/Xc3084fuHSTOTyxvq8s1NRz9cgKx8xyO0SHPjGMRwtqsFTP3iiD30SiMUDS+naO+375nCyngv8SZ1BocwXB05WYTwBwS2AnSjT6GCRTs6niQjv19XkYQctVlDyOO0fbm0XgXyBmkU3HUXf7HNQbPDLw==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-12-02T00:48:03.509Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.56" etag="ZWx27YT4rOeXZi0jRACP" version="20.6.0" type="github">
+  <diagram id="VuqIn1j-NX3XL-rteJBP" name="Page-1">
+    <mxGraphModel dx="899" dy="538" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d23jx_JjnTftPRl26lCg-1" value="SegmentTestAPI--AzureServer" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
